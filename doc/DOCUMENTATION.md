@@ -225,11 +225,11 @@ public class BookBuilder {
 }
 
 
-##Conclusion##
+**Conclusion**
 Designers may utilise design patterns to debate, document, and evaluate design choices by utilising a shared language, as demonstrated in this project by constructing a real-world example as a library management system. Design patterns simplify systems by allowing you to talk about them at a higher level of abstraction than a design notation or programming language enables.
 
 
-##Contributors##
+**Contributors**
 Akshay Yadav Muchumari 50%
 Raja Chandra Thangallapally 50%
 © 2022 GitHub, Inc.
