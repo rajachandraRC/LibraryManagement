@@ -121,3 +121,42 @@ We are implementing 4 design patterns.
  - Builder pattern
  - Adapter pattern
  - Factory pattern
+
+The library management system involves different function such as managing book transactions and creating
+user. It will also require search function to enable the user to find their desire resource in the library. Hence, the
+design pattern of the system is important, as it not only help in managing the arrangement of code, but it also
+helps in managing the memory allocation of the code. Different design pattern can be used in different cases,
+where not all the design patterns are suitable for the library management system. Instance in the user class need to be access globally while being encapsulated because it is needed to be access frequently by the user class in order to check whether the user already exist in the system. Multiple object
+needed to be create, as there is different type of books with the same property but different attributes, such as
+Magazine and Journal. The code is coupled therefore it is not flexible if any changes needed to be made in the
+Book class. 
+
+The **factory pattern** is used in the book class because multiple classes such as magazine, journal and textbook need to be created and
+also to prevent the code for calling the method in the subclasses to be written everywhere in the different classes
+repeatly
+
+The singleton pattern is used to build a single instance that will operate all of the system's features. Multiple instances cannot be produced each time the system is run since we used private for generating objects with the this function.
+
+The adapter pattern 
+MagazineAdapter.java
+
+package Adapter;
+
+    public class MagazineAdapter implements Magazine {
+	
+	
+    	BookData bd = new BookData();
+
+    	@Override
+	    public void write(String str) {
+		
+		   bd.shelf(str);
+		
+	    }
+
+    }
+Because magazine is an instance, we use the object of the book class to generate the object for magazine instance using the adpater design pattern.
+
+The bookbuilder.java pattern creates a complicated item using simple objects like book.java and a step-by-step method.
+
+In bookbuilder.java, we created set methods for constructing objects for initialization to the book parameters, and we used the getbook function to update these values in the book data. By following this pattern, we may supply book parameters in any order, and they will be changed in the book data.
