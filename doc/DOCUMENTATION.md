@@ -135,9 +135,38 @@ The **factory pattern** is used in the book class because multiple classes such 
 also to prevent the code for calling the method in the subclasses to be written everywhere in the different classes
 repeatly
 
-The singleton pattern is used to build a single instance that will operate all of the system's features. Multiple instances cannot be produced each time the system is run since we used private for generating objects with the this function.
+ package LMSFactory;
 
-The adapter pattern 
+public class UserFactory {
+
+public user getInstance(String str) {
+	
+	if(str.equals("S"))
+		return new Student();
+	else if(str.equals("A"))
+		return new Admin();
+	else
+		return new Guest();
+	
+}
+}
+
+
+The **singleton pattern** is used to build a single instance that will operate all of the system's features. Multiple instances cannot be produced each time the system is run since we used private for generating objects with the this function.
+
+      static BookFunc obj = new BookFunc();
+	
+	private BookFunc()
+	{
+		
+	}
+	
+	public static BookFunc getinstance()
+	{
+		return obj;
+	}
+
+**The adapter pattern** 
 MagazineAdapter.java
 
 package Adapter;
@@ -157,6 +186,53 @@ package Adapter;
     }
 Because magazine is an instance, we use the object of the book class to generate the object for magazine instance using the adpater design pattern.
 
+**Builder pattern**
+
 The bookbuilder.java pattern creates a complicated item using simple objects like book.java and a step-by-step method.
 
 In bookbuilder.java, we created set methods for constructing objects for initialization to the book parameters, and we used the getbook function to update these values in the book data. By following this pattern, we may supply book parameters in any order, and they will be changed in the book data.
+
+public class BookBuilder {
+	
+	private String bookname;
+	private String author;
+	private String pubdate;
+	private int sumpagination;
+	public BookBuilder setBookname(String bookname) {
+		this.bookname = bookname;
+		return this;
+	}
+	public BookBuilder setAuthor(String author) {
+		this.author = author;
+		return this;
+	}
+	public BookBuilder setPubdate(String pubdate) {
+		this.pubdate = pubdate;
+		return this;
+	}
+	public BookBuilder setSumpagination(int sumpagination) {
+		this.sumpagination = sumpagination;
+		return this;
+	}
+	
+	public Book getBook() {
+		System.out.println(bookname + " "+ author+ "  " + pubdate + " " + sumpagination);
+
+		
+		return new Book(bookname, author, pubdate, sumpagination);
+		
+	}
+}
+
+
+##Conclusion##
+Designers may utilise design patterns to debate, document, and evaluate design choices by utilising a shared language, as demonstrated in this project by constructing a real-world example as a library management system. Design patterns simplify systems by allowing you to talk about them at a higher level of abstraction than a design notation or programming language enables.
+
+
+##Contributors##
+Akshay Yadav Muchumari 50%
+Raja Chandra Thangallapally 50%
+© 2022 GitHub, Inc.
+Terms
+Privacy
+
