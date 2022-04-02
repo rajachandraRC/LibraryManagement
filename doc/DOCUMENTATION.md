@@ -121,6 +121,7 @@ We are implementing 4 design patterns.
  - Builder pattern
  - Adapter pattern
  - Factory pattern
+<<<<<<< HEAD
 
 The library management system involves different function such as managing book transactions and creating
 user. It will also require search function to enable the user to find their desire resource in the library. Hence, the
@@ -235,4 +236,6 @@ Raja Chandra Thangallapally 50%
 © 2022 GitHub, Inc.
 Terms
 Privacy
+
+=======
 
